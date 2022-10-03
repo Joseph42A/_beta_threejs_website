@@ -9,270 +9,269 @@ import { useControls } from "leva";
 export function MainModel(props) {
   const { nodes, materials } = useGLTF("/mainModel.gltf");
 
-  const { scale, rotation } = useControls("Model", {
-    scale: 2,
-    rotation: [0, 0, 0],
+  const { scale, rotation_1, rotation_2, position } = useControls("Model", {
+    scale: 6,
+    rotation_1: [-56.23, 33.4, -65.4],
+    rotation_2: [1.27, -0.04, 0.1],
+    position: [4.14, -6.56, 0],
   });
-
-  // {"rotation":[-0.6910000000000005,0.9969999999999992,-1.5920000000000123]}
-
-  // -56.00 ,34.50, -65.00
-
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-56.0, 34.5, -65.0]}>
-        <group scale={scale}>
-          <group>
-            <mesh
-              geometry={nodes["MeshBody1_(1)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(2)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(3)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(4)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(5)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(6)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(7)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(8)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(9)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(10)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(11)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(12)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(13)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(14)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(15)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(16)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(17)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(18)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(19)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(20)"].geometry}
-              material={materials["Mat.1"]}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(21)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(22)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(23)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(24)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(25)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(26)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(27)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(28)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(29)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes.MeshBody1.geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(30)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(31)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(32)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(33)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(34)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(35)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(36)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(37)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(38)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(39)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(40)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(41)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(42)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(43)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(44)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(45)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(46)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(47)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(48)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
-            <mesh
-              geometry={nodes["MeshBody1_(49)"].geometry}
-              material={materials.Mat}
-              position={[0, -14.67, 0.18]}
-            />
+      <group rotation={rotation_1} position={position}>
+        <group rotation={rotation_2}>
+          <group scale={scale}>
+            <group>
+              <mesh
+                geometry={nodes["MeshBody1_(1)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(2)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(3)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(4)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(5)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(6)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(7)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(8)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(9)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(10)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(11)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(12)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(13)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(14)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(15)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(16)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(17)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(18)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(19)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(20)"].geometry}
+                material={materials["Mat.1"]}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(21)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(22)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(23)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(24)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(25)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(26)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(27)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(28)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(29)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes.MeshBody1.geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(30)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(31)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(32)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(33)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(34)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(35)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(36)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(37)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(38)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(39)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(40)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(41)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(42)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(43)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(44)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(45)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(46)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(47)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(48)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+              <mesh
+                geometry={nodes["MeshBody1_(49)"].geometry}
+                material={materials.Mat}
+                position={[0, -14.67, 0.18]}
+              />
+            </group>
           </group>
         </group>
       </group>
