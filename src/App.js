@@ -61,7 +61,7 @@ const Camera = ({ ref }) => {
       <MainModel />
       {/* <BufferPoints count={5000} /> */}
 
-      <ambientLight intensity={0.2} />
+      <ambientLight intensity={0.9} />
       {/* <spotLight position={[-2.4, -8.0, 16.2]} intensity={0.6} /> */}
       {/* <pointLight position={position} intensity={0.1} /> */}
       <spotLight position={[-1, 26.68, 8.86]} intensity={intensity} />
@@ -93,6 +93,7 @@ function Particles({ count, mouse }) {
     }
     return temp;
   }, [count]);
+  const { camera } = useThree();
   // The innards of this hook will run every frame
   useFrame((state) => {
     // Makes the light follow the mouse
@@ -111,16 +112,28 @@ function Particles({ count, mouse }) {
       const s = Math.cos(t);
       particle.mx += (mouse?.current?.[0] - particle.mx) * 0.01;
       particle.my += (mouse?.current?.[1] * -1 - particle.my) * 0.01;
+
+      // update on mouse move
+      // useFrame((state) => {
+      //   camera.position.x +=
+      //     (state.mouse.x * viewport.width - camera.position.x) * 0.0005;
+      //   camera.position.y +=
+      //     (-state.mouse.y * viewport.height - camera.position.y) * 0.0005;
+      //   camera.lookAt(0, 0, 0);
+      // // });
+
       // Update the dummy object
       dummy.position.set(
         (particle.mx / 10) * a +
           xFactor +
           Math.cos((t / 10) * factor) +
-          (Math.sin(t * 1) * factor) / 10,
+          (Math.sin(t * 1) * factor) / 10 +
+          (state.mouse.x * viewport.width - camera.position.x) * 0.005,
         (particle.my / 10) * b +
           yFactor +
           Math.sin((t / 10) * factor) +
-          (Math.cos(t * 2) * factor) / 10,
+          (Math.cos(t * 2) * factor) / 10 +
+          (state.mouse.y * viewport.height - camera.position.y) * 0.005,
         (particle.my / 10) * b +
           zFactor +
           Math.cos((t / 10) * factor) +
@@ -134,6 +147,7 @@ function Particles({ count, mouse }) {
     });
     mesh.current.instanceMatrix.needsUpdate = true;
   });
+
   return (
     <>
       <pointLight ref={light} distance={40} intensity={8} color="lightblue" />
@@ -145,10 +159,22 @@ function Particles({ count, mouse }) {
   );
 }
 
+function Rig({ mouse }) {
+  const { camera, viewport } = useThree();
+  useFrame((state) => {
+    camera.position.x +=
+      (state.mouse.x * viewport.width - camera.position.x) * 0.0005;
+    camera.position.y +=
+      (-state.mouse.y * viewport.height - camera.position.y) * 0.0005;
+    camera.lookAt(0, 0, 0);
+  });
+  return null;
+}
+
 export default function App() {
   const mouse = useRef([0, 0]);
 
-  const scale = Array.from({ length: 1000 }, () => 0.5 + Math.random() * 4);
+  // const scale = Array.from({ length: 1000 }, () => 0.5 + Math.random() * 4);
 
   return (
     <>
@@ -171,6 +197,8 @@ export default function App() {
         /> */}
 
         <Particles count={false ? 5000 : 10000} mouse={mouse} />
+
+        {/* <Rig /> */}
 
         {/* <axesHelper args={[10]} /> */}
         {/* <OrbitControls ref={ref} shadows={false} enableZoom={false} /> */}
